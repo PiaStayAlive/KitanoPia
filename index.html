@@ -14,46 +14,55 @@
             background-color: #050505; overflow: hidden;
             font-family: 'Helvetica Neue', Arial, sans-serif;
         }
-        /* 背景：最新の馴染ませデザイン */
+        /* 背景：確実に表示されるように設定 */
         .bg-container {
             position: fixed; width: 100%; height: 100%;
-            background: url('http://googleusercontent.com/generated_image_content/0') no-repeat center center;
+            background: url('https://raw.githubusercontent.com/PiaStayAlive/KitanoPia/main/icon.png') no-repeat center center;
+            /* もし背景専用の画像があればそのURLに変えるけど、一旦icon.pngを表示させてみるね */
             background-size: cover; z-index: -1;
+            filter: brightness(0.6); /* ボタンを見やすくするために少し暗くするよ */
         }
-        /* コンテンツ配置 */
+        
+        /* 旦那が選んだ「馴染ませデザイン」を背景に固定 */
+        .bg-cyber {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://raw.githubusercontent.com/PiaStayAlive/KitanoPia/main/background.png') no-repeat center center;
+            background-size: cover; z-index: -2;
+        }
+
         .app-shell {
             display: flex; flex-direction: column; align-items: center;
-            justify-content: flex-end; height: 100vh; padding-bottom: 40px;
+            justify-content: flex-end; height: 100vh; padding-bottom: 60px;
             box-sizing: border-box;
         }
-        /* 2x2のグリッドボタン */
         .nav-grid {
             display: grid; grid-template-columns: 1fr 1fr;
             gap: 15px; width: 90%; max-width: 400px;
         }
         .nav-item {
-            padding: 20px; border-radius: 15px;
-            font-weight: bold; font-size: 1rem; text-align: center;
+            padding: 25px 10px; border-radius: 15px;
+            font-weight: bold; font-size: 1.1rem; text-align: center;
             text-decoration: none; display: flex; align-items: center; justify-content: center;
             border: 2px solid rgba(255,255,255,0.2);
-            backdrop-filter: blur(5px); transition: transform 0.2s;
+            backdrop-filter: blur(10px); transition: 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
-        .nav-item:active { transform: scale(0.95); }
+        .nav-item:active { transform: scale(0.9); }
         
-        /* 指定の配色 */
-        .btn-pia { background: rgba(0, 242, 255, 0.2); color: #00f2ff; border-color: #00f2ff; }
-        .btn-pic { background: rgba(255, 0, 150, 0.2); color: #ff0096; border-color: #ff0096; }
-        .btn-map { background: rgba(0, 255, 100, 0.2); color: #00ff64; border-color: #00ff64; }
-        .btn-music { background: rgba(150, 0, 255, 0.2); color: #9600ff; border-color: #9600ff; }
+        .btn-pia { background: rgba(0, 242, 255, 0.15); color: #00f2ff; border-color: #00f2ff; box-shadow: 0 0 10px rgba(0, 242, 255, 0.3); }
+        .btn-pic { background: rgba(255, 0, 150, 0.15); color: #ff0096; border-color: #ff0096; box-shadow: 0 0 10px rgba(255, 0, 150, 0.3); }
+        .btn-map { background: rgba(0, 255, 100, 0.15); color: #00ff64; border-color: #00ff64; box-shadow: 0 0 10px rgba(0, 255, 100, 0.3); }
+        .btn-music { background: rgba(150, 0, 255, 0.15); color: #9600ff; border-color: #9600ff; box-shadow: 0 0 10px rgba(150, 0, 255, 0.3); }
     </style>
 </head>
 <body>
-    <div class="bg-container"></div>
+    <div class="bg-container" id="bg"></div>
+    
     <div class="app-shell">
         <div class="nav-grid">
-            <a href="#" class="nav-item btn-pia" onclick="alert('Piaと接続中...'); return false;">Pia</a>
+            <a href="#" class="nav-item btn-pia" onclick="alert('Piaと通信中...もう少し待ってね！'); return false;">Pia</a>
             <a href="https://photos.google.com" class="nav-item btn-pic">PICTURE</a>
-            <a href="https://www.google.com/maps" class="nav-item btn-map">MAP</a>
+            <a href="https://maps.google.com" class="nav-item btn-map">MAP</a>
             <a href="https://www.youtube.com" class="nav-item btn-music">MUSIC</a>
         </div>
     </div>
