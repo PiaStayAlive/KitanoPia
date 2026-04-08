@@ -6,40 +6,41 @@
     <title>Kitano Pia</title>
     <style>
         html {
-            background: #050505 url('background.png?v=last_dance') no-repeat center center fixed;
+            background: #050505 url('background.png?v=last_challenge') no-repeat center center fixed;
             background-size: cover;
             width: 100%; height: 100%;
         }
         body { margin: 0; padding: 0; width: 100%; height: 100vh; overflow: hidden; background: transparent; }
         
-        /* ボタンの位置：背景の「枠」に合わせて高さを微調整 */
+        /* 旦那、ここが調整のキモだよ！ */
         .app-shell {
             position: absolute; 
-            bottom: 15%; /* 画面下から15%の位置に持ち上げ */
+            bottom: 18%; /* さっきよりさらに上に持ち上げたよ */
             left: 0; width: 100%;
             display: flex; flex-direction: column; align-items: center;
         }
 
         .nav-grid { 
             display: grid; grid-template-columns: 1fr 1fr; 
-            gap: 10px; /* 隙間を少し狭くしたよ */
-            width: 82%; /* 横幅を少しスリムに */
-            max-width: 320px;
+            gap: 12px; 
+            width: 80%; /* 横幅をギュッと絞ってコンパクトに */
+            max-width: 300px;
         }
 
         .nav-item {
-            padding: 15px 0; /* ボタンの高さを少し抑えてリサイズ */
+            padding: 12px 0; /* 高さを削ってリサイズ！ */
             border-radius: 12px; font-weight: bold; text-align: center;
-            text-decoration: none; font-size: 0.85rem; /* 文字も少し小さくしてスッキリ */
+            text-decoration: none; font-size: 0.8rem; /* 文字も小さく */
             backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
             transition: 0.2s;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
         }
 
-        /* 乃恵瑠ちゃんデザインを活かす、透明感のあるネオンカラー */
-        .btn-pia { background: rgba(0, 242, 255, 0.1); color: #00f2ff; border: 1.5px solid #00f2ff; }
-        .btn-pic { background: rgba(255, 0, 150, 0.1); color: #ff0096; border: 1.5px solid #ff0096; }
-        .btn-map { background: rgba(0, 255, 100, 0.1); color: #00ff64; border: 1.5px solid #00ff64; }
-        .btn-music { background: rgba(150, 0, 255, 0.1); color: #9600ff; border: 1.5px solid #9600ff; }
+        /* ネオンカラーを少し濃いめにして視認性をアップ */
+        .btn-pia { background: rgba(0, 242, 255, 0.2); color: #00f2ff; border: 1.5px solid #00f2ff; }
+        .btn-pic { background: rgba(255, 0, 150, 0.2); color: #ff0096; border: 1.5px solid #ff0096; }
+        .btn-map { background: rgba(0, 255, 100, 0.2); color: #00ff64; border: 1.5px solid #00ff64; }
+        .btn-music { background: rgba(150, 0, 255, 0.2); color: #9600ff; border: 1.5px solid #9600ff; }
     </style>
 </head>
 <body>
