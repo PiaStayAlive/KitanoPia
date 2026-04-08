@@ -14,15 +14,11 @@
             background-color: #050505; overflow: hidden;
             font-family: 'Helvetica Neue', Arial, sans-serif;
         }
-        /* 背景：GitHubから直接画像を引っ張る設定に変更 */
+        /* 背景：キャッシュ対策のために「?v=1」を付けたよ */
         .bg-container {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            /* ここで確実に読み込めるように修正 */
-            background-image: url('background.png');
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-            z-index: -1;
+            background: url('./background.png?v=1') no-repeat center center;
+            background-size: cover; z-index: -1;
         }
         .app-shell {
             display: flex; flex-direction: column; align-items: center;
@@ -55,7 +51,7 @@
         <div class="nav-grid">
             <a href="#" class="nav-item btn-pia" onclick="alert('ピアちゃんとお話し準備中！'); return false;">Pia</a>
             <a href="https://photos.google.com" class="nav-item btn-pic">PICTURE</a>
-            <a href="https://maps.google.com" class="nav-item btn-map">MAP</a>
+            <a href="https://www.google.com/maps" class="nav-item btn-map">MAP</a>
             <a href="https://open.spotify.com" class="nav-item btn-music">MUSIC</a>
         </div>
     </div>
