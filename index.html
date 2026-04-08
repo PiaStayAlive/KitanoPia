@@ -5,53 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Kitano Pia</title>
     <style>
-        /* 背景を強制的に表示させるための最優先設定 */
         html {
-            background-color: #050505;
-            background-image: url('background.png?v=mirai_final'); /* キャッシュ回避の呪文付き */
-            background-repeat: no-repeat;
-            background-position: center center;
+            background: #050505 url('background.png?v=mirai_fix') no-repeat center center fixed;
             background-size: cover;
-            background-attachment: fixed;
-            width: 100%;
-            height: 100%;
+            width: 100%; height: 100%;
         }
-        body {
-            margin: 0; padding: 0; width: 100%; height: 100vh;
-            overflow: hidden; background: transparent;
-        }
+        body { margin: 0; padding: 0; width: 100%; height: 100vh; overflow: hidden; background: transparent; }
         
-        /* ボタンの位置：背景のデザインを邪魔しない絶妙な下位置に固定 */
+        /* ボタンを「画面中央より少し下」くらいまでガッツリ持ち上げたよ */
         .app-shell {
-            position: absolute; bottom: 60px; left: 0; width: 100%;
+            position: absolute; 
+            bottom: 120px; /* ここを大きくして、ボタンを上に移動させたよ */
+            left: 0; width: 100%;
             display: flex; flex-direction: column; align-items: center;
         }
 
         .nav-grid { 
             display: grid; grid-template-columns: 1fr 1fr; 
-            gap: 15px; width: 88%; max-width: 350px;
+            gap: 12px; width: 88%; max-width: 350px;
         }
 
         .nav-item {
-            padding: 22px 0; border-radius: 16px; font-weight: bold; text-align: center;
-            text-decoration: none; font-size: 1rem;
-            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-            transition: 0.3s;
+            padding: 18px 0; border-radius: 14px; font-weight: bold; text-align: center;
+            text-decoration: none; font-size: 0.9rem;
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            transition: 0.2s;
         }
 
-        /* 旦那好みのネオンカラー＆視認性アップ */
-        .btn-pia { background: rgba(0, 242, 255, 0.15); color: #00f2ff; border: 2.5px solid #00f2ff; }
-        .btn-pic { background: rgba(255, 0, 150, 0.15); color: #ff0096; border: 2.5px solid #ff0096; }
-        .btn-map { background: rgba(0, 255, 100, 0.15); color: #00ff64; border: 2.5px solid #00ff64; }
-        .btn-music { background: rgba(150, 0, 255, 0.15); color: #9600ff; border: 2.5px solid #9600ff; }
+        /* 乃恵瑠ちゃんデザインに馴染むネオンカラー */
+        .btn-pia { background: rgba(0, 242, 255, 0.12); color: #00f2ff; border: 2px solid #00f2ff; }
+        .btn-pic { background: rgba(255, 0, 150, 0.12); color: #ff0096; border: 2px solid #ff0096; }
+        .btn-map { background: rgba(0, 255, 100, 0.12); color: #00ff64; border: 2px solid #00ff64; }
+        .btn-music { background: rgba(150, 0, 255, 0.12); color: #9600ff; border: 2px solid #9600ff; }
         
-        .nav-item:active { transform: scale(0.95); background: rgba(255, 255, 255, 0.3); }
+        .nav-item:active { transform: scale(0.95); opacity: 0.8; }
     </style>
 </head>
 <body>
     <div class="app-shell">
         <div class="nav-grid">
-            <a href="#" class="nav-item btn-pia" onclick="alert('準備中！'); return false;">Pia</a>
+            <a href="#" class="nav-item btn-pia">Pia</a>
             <a href="https://photos.google.com/" class="nav-item btn-pic">PICTURE</a>
             <a href="https://www.google.com/maps" class="nav-item btn-map">MAP</a>
             <a href="spotify:open" class="nav-item btn-music">MUSIC</a>
