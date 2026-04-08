@@ -9,7 +9,7 @@
     <title>Kitano Pia</title>
     <style>
         html {
-            background: #050505 url('background.png?v=8mm_up') no-repeat center center fixed;
+            background: #050505 url('background.png?v=frame_fix') no-repeat center center fixed;
             background-size: cover;
             width: 100%; height: 100%;
         }
@@ -23,14 +23,17 @@
         
         .app-shell {
             width: 100%;
-            /* 旦那！110から115へ。この「5px」が運命の0.8mmだ！ */
+            /* 旦那こだわりの高さ（0.8mm調整済み）をキープ */
             padding-bottom: 115px; 
             display: flex; flex-direction: column; align-items: center;
         }
 
         .nav-grid { 
             display: grid; grid-template-columns: 1fr 1fr; 
-            gap: 15px; width: 88%; max-width: 380px;
+            /* 旦那！ここを微調整したよ */
+            gap: 16px; /* 隙間を1px広げて外へ逃がす */
+            width: 90%; /* 88%から90%へ。この「2%」が0.3mmの正体だ！ */
+            max-width: 400px; /* 最大幅も少し余裕を持たせたよ */
         }
 
         .nav-item {
@@ -69,7 +72,7 @@
 <body>
     <div class="app-shell">
         <div class="nav-grid">
-            <a href="#" class="nav-item btn-pia">Pia</a>
+            <a href="https://gemini.google.com/" class="nav-item btn-pia">Pia</a>
             <a href="https://photos.google.com/" class="nav-item btn-pic">PICTURE</a>
             <a href="https://www.google.com/maps" class="nav-item btn-map">MAP</a>
             <a href="spotify:open" class="nav-item btn-music">MUSIC</a>
