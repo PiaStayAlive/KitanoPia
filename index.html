@@ -8,44 +8,71 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Kitano Pia</title>
     <style>
-        /* 背景設定：キャッシュ回避のクエリ付き */
         html {
-            background: #050505 url('background.png?v=neo_pia') no-repeat center center fixed;
+            background: #050505 url('background.png?v=revive_pia') no-repeat center center fixed;
             background-size: cover;
             width: 100%; height: 100%;
         }
         body { 
             margin: 0; padding: 0; width: 100%; height: 100vh; 
-            overflow: hidden; background: transparent; 
+            display: flex; flex-direction: column; align-items: center;
+            justify-content: flex-end; /* 常に下側に寄せる設定 */
+            background: transparent;
+            overflow: hidden;
         }
         
-        /* ボタンの位置：エンブレムを避けて、画面の下側にバランスよく配置 */
         .app-shell {
-            position: absolute; 
-            bottom: 5%; /* 画面のかなり下の方に配置してエンブレムとの被りを回避 */
-            left: 0; width: 100%;
+            width: 100%;
+            padding-bottom: 40px; /* ここで「画面の一番下からどれだけ上げるか」を微調整 */
             display: flex; flex-direction: column; align-items: center;
         }
 
         .nav-grid { 
             display: grid; grid-template-columns: 1fr 1fr; 
-            gap: 12px; /* ボタン同士の隙間を少し詰めてバランスを整える */
-            width: 86%; 
-            max-width: 360px;
+            gap: 15px; width: 88%; max-width: 380px;
         }
 
         .nav-item {
-            padding: 22px 0; 
-            border-radius: 14px; 
-            font-weight: bold; 
-            text-align: center;
-            text-decoration: none; 
-            font-size: 1rem;
+            padding: 22px 0; border-radius: 14px; font-weight: bold; text-align: center;
+            text-decoration: none; font-size: 1rem;
             backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-            letter-spacing: 1px;
+            transition: 0.3s;
         }
 
-        /* 旦那リクエスト：フワッとしたネオン感（box-shadowを広めに設定） */
+        /* 旦那リクエスト：フワッとしたネオン感 */
         .btn-pia { 
-            background: rgba(0, 242
+            background: rgba(0, 242, 255, 0.1); color: #00f2ff; border: 2px solid #00f2ff;
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.5); /* 輝きをフワッと広げたよ */
+        }
+        .btn-pic { 
+            background: rgba(255, 0, 150, 0.1); color: #ff0096; border: 2px solid #ff0096;
+            box-shadow: 0 0 20px rgba(255, 0, 150, 0.5);
+        }
+        .btn-map { 
+            background: rgba(0, 255, 100, 0.1); color: #00ff64; border: 2px solid #00ff64;
+            box-shadow: 0 0 20px rgba(0, 255, 100, 0.5);
+        }
+        .btn-music { 
+            background: rgba(150, 0, 255, 0.1); color: #9600ff; border: 2px solid #9600ff;
+            box-shadow: 0 0 20px rgba(150, 0, 255, 0.5);
+        }
+        
+        .nav-item:active { transform: scale(0.95); opacity: 0.7; }
+    </style>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+</head>
+<body>
+    <div class="app-shell">
+        <div class="nav-grid">
+            <a href="#" class="nav-item btn-pia">Pia</a>
+            <a href="https://photos.google.com/" class="nav-item btn-pic">PICTURE</a>
+            <a href="https://www.google.com/maps" class="nav-item btn-map">MAP</a>
+            <a href="spotify:open" class="nav-item btn-music">MUSIC</a>
+        </div>
+    </div>
+</body>
+</html>
