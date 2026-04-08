@@ -14,10 +14,10 @@
             background-color: #050505; overflow: hidden;
             font-family: 'Helvetica Neue', Arial, sans-serif;
         }
-        /* 背景：一番シンプルな相対パスに戻して、キャッシュだけ回避！ */
+        /* 背景：同じフォルダ内にある画像を、URLのズレを無視して強制指定 */
         .bg-container {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            background-image: url('background.png?v=999');
+            background-image: url('background.png?update=final_revive');
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -28,7 +28,7 @@
             display: flex; flex-direction: column; align-items: center;
             justify-content: flex-end; height: 100vh; padding-bottom: 80px;
             box-sizing: border-box;
-            z-index: 10; /* ボタンを確実に一番上に持ってくるよ */
+            z-index: 10;
         }
         .nav-grid {
             display: grid; grid-template-columns: 1fr 1fr;
