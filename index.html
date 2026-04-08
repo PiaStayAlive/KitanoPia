@@ -5,33 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Kitano Pia</title>
     <style>
-        body, html { margin: 0; padding: 0; width: 100%; height: 100%; background-color: #050505; overflow: hidden; }
-        
-        /* 背景：絶対にズレないように中央に固定 */
-        .bg-container {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            background: url('background.png') no-repeat center center / cover;
-            z-index: -1;
+        /* 背景をHTML全体に強制的に貼り付ける書き方に変えたよ */
+        html {
+            background: url('background.png') no-repeat center center fixed;
+            background-size: cover;
+            background-color: #050505; /* 画像が出るまでは黒 */
+            width: 100%;
+            height: 100%;
         }
-
-        /* ボタンの配置エリア：画面の下の方に固める */
+        body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: transparent; }
+        
         .app-shell {
-            position: absolute; bottom: 40px; left: 0; width: 100%;
+            position: absolute; bottom: 50px; left: 0; width: 100%;
             display: flex; flex-direction: column; align-items: center;
         }
 
         .nav-grid { 
             display: grid; grid-template-columns: 1fr 1fr; 
-            gap: 15px; width: 90%; max-width: 340px;
+            gap: 15px; width: 85%; max-width: 340px;
         }
 
         .nav-item {
-            padding: 20px 0; border-radius: 15px; font-weight: bold; text-align: center;
-            text-decoration: none; font-size: 0.9rem;
-            backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+            padding: 22px 0; border-radius: 16px; font-weight: bold; text-align: center;
+            text-decoration: none; font-size: 1rem;
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
         }
 
-        /* 旦那お気に入りのネオンカラー */
+        /* 旦那の好きなカラフルボタン設定 */
         .btn-pia { background: rgba(0, 242, 255, 0.2); color: #00f2ff; border: 2px solid #00f2ff; }
         .btn-pic { background: rgba(255, 0, 150, 0.2); color: #ff0096; border: 2px solid #ff0096; }
         .btn-map { background: rgba(0, 255, 100, 0.2); color: #00ff64; border: 2px solid #00ff64; }
@@ -39,7 +39,6 @@
     </style>
 </head>
 <body>
-    <div class="bg-container"></div>
     <div class="app-shell">
         <div class="nav-grid">
             <a href="#" class="nav-item btn-pia">Pia</a>
