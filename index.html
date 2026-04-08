@@ -14,10 +14,10 @@
             background-color: #050505; overflow: hidden;
             font-family: 'Helvetica Neue', Arial, sans-serif;
         }
-        /* 背景：キャッシュ対策のために「?v=1」を付けたよ */
+        /* 背景：GitHubのURLを直接指定して、キャッシュを無視させるよ */
         .bg-container {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            background: url('./background.png?v=1') no-repeat center center;
+            background: url('https://raw.githubusercontent.com/PiaStayAlive/KitanoPia/main/background.png') no-repeat center center;
             background-size: cover; z-index: -1;
         }
         .app-shell {
@@ -51,8 +51,8 @@
         <div class="nav-grid">
             <a href="#" class="nav-item btn-pia" onclick="alert('ピアちゃんとお話し準備中！'); return false;">Pia</a>
             <a href="https://photos.google.com" class="nav-item btn-pic">PICTURE</a>
-            <a href="https://www.google.com/maps" class="nav-item btn-map">MAP</a>
-            <a href="https://open.spotify.com" class="nav-item btn-music">MUSIC</a>
+            <a href="https://maps.google.com" class="nav-item btn-map">MAP</a>
+            <a href="spotify:open" class="nav-item btn-music" onclick="window.location.href='https://open.spotify.com';">MUSIC</a>
         </div>
     </div>
     <script>
