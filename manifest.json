@@ -1,10 +1,11 @@
 {
   "name": "Kitano Pia",
   "short_name": "Pia",
-  "start_url": "index.html",
+  "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#1a0f0a",
-  "theme_color": "#00f2ff",
+  "orientation": "portrait",
+  "background_color": "#050505",
+  "theme_color": "#050505",
   "icons": [
     {
       "src": "icon.png",
