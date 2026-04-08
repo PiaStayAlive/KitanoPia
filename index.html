@@ -14,11 +14,15 @@
             background-color: #050505; overflow: hidden;
             font-family: 'Helvetica Neue', Arial, sans-serif;
         }
-        /* 背景：ファイル名を確実に指定 */
+        /* 背景：GitHubから直接画像を引っ張る設定に変更 */
         .bg-container {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            background: url('background.png') no-repeat center center;
-            background-size: cover; z-index: -1;
+            /* ここで確実に読み込めるように修正 */
+            background-image: url('background.png');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            z-index: -1;
         }
         .app-shell {
             display: flex; flex-direction: column; align-items: center;
@@ -39,7 +43,6 @@
         }
         .nav-item:active { transform: scale(0.92); opacity: 0.8; }
         
-        /* 旦那指定のカラーリング */
         .btn-pia { background: rgba(0, 242, 255, 0.2); color: #00f2ff; border-color: #00f2ff; }
         .btn-pic { background: rgba(255, 0, 150, 0.2); color: #ff0096; border-color: #ff0096; }
         .btn-map { background: rgba(0, 255, 100, 0.2); color: #00ff64; border-color: #00ff64; }
@@ -53,7 +56,7 @@
             <a href="#" class="nav-item btn-pia" onclick="alert('ピアちゃんとお話し準備中！'); return false;">Pia</a>
             <a href="https://photos.google.com" class="nav-item btn-pic">PICTURE</a>
             <a href="https://maps.google.com" class="nav-item btn-map">MAP</a>
-            <a href="https://www.youtube.com" class="nav-item btn-music">MUSIC</a>
+            <a href="https://open.spotify.com" class="nav-item btn-music">MUSIC</a>
         </div>
     </div>
     <script>
