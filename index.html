@@ -3,54 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Kitano Pia</title>
     <style>
         html {
-            background: #050505 url('background.png?v=last_challenge') no-repeat center center fixed;
+            background: #050505 url('background.png') no-repeat center center fixed;
             background-size: cover;
             width: 100%; height: 100%;
         }
         body { margin: 0; padding: 0; width: 100%; height: 100vh; overflow: hidden; background: transparent; }
         
-        /* 旦那、ここが調整のキモだよ！ */
         .app-shell {
             position: absolute; 
-            bottom: 18%; /* さっきよりさらに上に持ち上げたよ */
+            bottom: 8%; /* ボタンをさらに少し下げてバランス調整 */
             left: 0; width: 100%;
             display: flex; flex-direction: column; align-items: center;
         }
 
         .nav-grid { 
             display: grid; grid-template-columns: 1fr 1fr; 
-            gap: 12px; 
-            width: 80%; /* 横幅をギュッと絞ってコンパクトに */
-            max-width: 300px;
+            gap: 15px; 
+            width: 85%; /* 少しだけ横幅を広げて大きくしたよ */
+            max-width: 360px;
         }
 
         .nav-item {
-            padding: 12px 0; /* 高さを削ってリサイズ！ */
-            border-radius: 12px; font-weight: bold; text-align: center;
-            text-decoration: none; font-size: 0.8rem; /* 文字も小さく */
+            padding: 22px 0; /* ボタンの高さを出して、押しやすく大きくしたよ */
+            border-radius: 15px; font-weight: bold; text-align: center;
+            text-decoration: none; font-size: 1rem;
             backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
             transition: 0.2s;
-            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
         }
 
-        /* ネオンカラーを少し濃いめにして視認性をアップ */
-        .btn-pia { background: rgba(0, 242, 255, 0.2); color: #00f2ff; border: 1.5px solid #00f2ff; }
-        .btn-pic { background: rgba(255, 0, 150, 0.2); color: #ff0096; border: 1.5px solid #ff0096; }
-        .btn-map { background: rgba(0, 255, 100, 0.2); color: #00ff64; border: 1.5px solid #00ff64; }
-        .btn-music { background: rgba(150, 0, 255, 0.2); color: #9600ff; border: 1.5px solid #9600ff; }
-    </style>
-</head>
-<body>
-    <div class="app-shell">
-        <div class="nav-grid">
-            <a href="#" class="nav-item btn-pia">Pia</a>
-            <a href="https://photos.google.com" class="nav-item btn-pic">PICTURE</a>
-            <a href="https://maps.google.com" class="nav-item btn-map">MAP</a>
-            <a href="spotify:open" class="nav-item btn-music">MUSIC</a>
-        </div>
-    </div>
-</body>
-</html>
+        .btn-pia { background: rgba(0, 242, 255, 0.15); color: #00f2ff; border: 2px solid #00f2ff; }
+        .btn-pic { background: rgba(255, 0, 150, 0.15); color: #ff0096; border: 2px solid #ff0096; }
+        .btn-map { background: rgba(0, 255, 100, 0.15); color: #00ff64; border: 2px solid #00ff
