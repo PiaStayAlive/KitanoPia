@@ -5,35 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Kitano Pia</title>
     <style>
-        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; }
+        body, html { 
+            margin: 0; padding: 0; width: 100%; height: 100%; 
+            background-color: #050505; overflow: hidden; 
+        }
         
-        /* 背景を「html」と「body」の両方に、これでもかと指定したよ */
-        body {
-            background-image: url('background.png');
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-            background-attachment: fixed;
-            background-color: #333; /* 画像が出ない時はグレーになるはず */
+        /* 背景：画像がボタンに被りすぎないように調整 */
+        .bg-container {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: url('background.png') no-repeat center 20% / contain; /* 20%上に寄せて、全体が見えるようにしたよ */
+            z-index: -1;
+            background-color: #050505;
         }
 
         .app-shell {
             display: flex; flex-direction: column; align-items: center;
-            justify-content: flex-end; height: 100vh; padding-bottom: 80px; box-sizing: border-box;
+            justify-content: flex-end; height: 100vh; 
+            padding-bottom: 40px; /* 下の余白を少し詰めたよ */
+            box-sizing: border-box;
         }
-        .nav-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 90%; }
+
+        .nav-grid { 
+            display: grid; grid-template-columns: 1fr 1fr; 
+            gap: 15px; width: 85%; max-width: 350px;
+            margin-bottom: 20px; /* ボタンを少し上に持ち上げたよ */
+        }
+
         .nav-item {
-            padding: 25px 0; border-radius: 18px; font-weight: bold; text-align: center;
-            text-decoration: none; border: 2px solid rgba(255,255,255,0.4);
-            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); color: #fff;
+            padding: 20px 0; border-radius: 15px; font-weight: bold; text-align: center;
+            text-decoration: none; border: 2px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+            font-size: 0.9rem;
         }
-        .btn-pia { background: rgba(0, 242, 255, 0.2); color: #00f2ff; border-color: #00f2ff; }
-        .btn-pic { background: rgba(255, 0, 150, 0.2); color: #ff0096; border-color: #ff0096; }
-        .btn-map { background: rgba(0, 255, 100, 0.2); color: #00ff64; border-color: #00ff64; }
-        .btn-music { background: rgba(150, 0, 255, 0.2); color: #9600ff; border-color: #9600ff; }
+
+        .btn-pia { background: rgba(0, 242, 255, 0.15); color: #00f2ff; border-color: #00f2ff; }
+        .btn-pic { background: rgba(255, 0, 150, 0.15); color: #ff0096; border-color: #ff0096; }
+        .btn-map { background: rgba(0, 255, 100, 0.15); color: #00ff64; border-color: #00ff64; }
+        .btn-music { background: rgba(150, 0, 255, 0.15); color: #9600ff; border-color: #9600ff; }
     </style>
 </head>
 <body>
+    <div class="bg-container"></div>
     <div class="app-shell">
         <div class="nav-grid">
             <a href="#" class="nav-item btn-pia">Pia</a>
