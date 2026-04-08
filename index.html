@@ -17,7 +17,7 @@
         
         .app-shell {
             position: absolute; 
-            bottom: 8%; /* ボタンをさらに少し下げてバランス調整 */
+            bottom: 12%; /* ボタンが画面内に収まるように位置を調整 */
             left: 0; width: 100%;
             display: flex; flex-direction: column; align-items: center;
         }
@@ -25,19 +25,11 @@
         .nav-grid { 
             display: grid; grid-template-columns: 1fr 1fr; 
             gap: 15px; 
-            width: 85%; /* 少しだけ横幅を広げて大きくしたよ */
-            max-width: 360px;
+            width: 88%; /* 横幅を広げてボタンを大きく */
+            max-width: 380px;
         }
 
         .nav-item {
-            padding: 22px 0; /* ボタンの高さを出して、押しやすく大きくしたよ */
-            border-radius: 15px; font-weight: bold; text-align: center;
-            text-decoration: none; font-size: 1rem;
-            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-            transition: 0.2s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-        }
-
-        .btn-pia { background: rgba(0, 242, 255, 0.15); color: #00f2ff; border: 2px solid #00f2ff; }
-        .btn-pic { background: rgba(255, 0, 150, 0.15); color: #ff0096; border: 2px solid #ff0096; }
-        .btn-map { background: rgba(0, 255, 100, 0.15); color: #00ff64; border: 2px solid #00ff
+            padding: 24px 0; /* 高さを出して、さらに存在感アップ */
+            border-radius: 16px; font-weight: bold; text-align: center;
+            text-decoration: none; font-size: 1.1rem
