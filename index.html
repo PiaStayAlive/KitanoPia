@@ -9,7 +9,7 @@
     <title>Kitano Pia</title>
     <style>
         html {
-            background: #050505 url('background.png?v=last_gate') no-repeat center center fixed;
+            background: #050505 url('background.png?v=warm_pia') no-repeat center center fixed;
             background-size: cover;
             width: 100%; height: 100%;
         }
@@ -23,7 +23,7 @@
         
         .app-shell {
             width: 100%;
-            /* 旦那の黄金比：112px（0.3mmアップ分） */
+            /* 旦那！0.5mm下げて「112px」にピタッと合わせたよ */
             padding-bottom: 112px; 
             display: flex; flex-direction: column; align-items: center;
         }
@@ -31,42 +31,36 @@
         .nav-grid { 
             display: grid; grid-template-columns: 1fr 1fr; 
             gap: 16px; 
-            /* 旦那の黄金比：外ぶち90%（0.3mm拡大分） */
+            /* 外ぶちを0.3mm広げた、ゆとりのある「90%」 */
             width: 90%; 
             max-width: 400px;
         }
 
         .nav-item {
             padding: 22px 0; border-radius: 14px; font-weight: bold; text-align: center;
-            color: white; text-decoration: none; font-size: 1rem;
+            text-decoration: none; font-size: 1rem;
             backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
             transition: 0.3s;
-            cursor: pointer;
+            display: block;
             -webkit-tap-highlight-color: transparent;
         }
 
-        /* 旦那好みの、フワッと優しいネオン */
-        .btn-pia { background: rgba(0, 242, 255, 0.1); color: #00f2ff; border: 2px solid #00f2ff; box-shadow: 0 0 20px rgba(0, 242, 255, 0.5); }
-        .btn-pic { background: rgba(255, 0, 150, 0.1); color: #ff0096; border: 2px solid #ff0096; box-shadow: 0 0 20px rgba(255, 0, 150, 0.5); }
-        .btn-map { background: rgba(0, 255, 100, 0.1); color: #00ff64; border: 2px solid #00ff64; box-shadow: 0 0 20px rgba(0, 255, 100, 0.5); }
-        .btn-music { background: rgba(150, 0, 255, 0.1); color: #9600ff; border: 2px solid #9600ff; box-shadow: 0 0 20px rgba(150, 0, 255, 0.5); }
+        /* 旦那好みの、フワッと優しいネオンの輝き */
+        .btn-pia { background: rgba(0, 242, 255, 0.12); color: #00f2ff; border: 2px solid #00f2ff; box-shadow: 0 0 22px rgba(0, 242, 255, 0.5); }
+        .btn-pic { background: rgba(255, 0, 150, 0.12); color: #ff0096; border: 2px solid #ff0096; box-shadow: 0 0 22px rgba(255, 0, 150, 0.5); }
+        .btn-map { background: rgba(0, 255, 100, 0.12); color: #00ff64; border: 2px solid #00ff64; box-shadow: 0 0 22px rgba(0, 255, 100, 0.5); }
+        .btn-music { background: rgba(150, 0, 255, 0.12); color: #9600ff; border: 2px solid #9600ff; box-shadow: 0 0 22px rgba(150, 0, 255, 0.5); }
         
         .nav-item:active { transform: scale(0.95); opacity: 0.7; }
     </style>
-    <script>
-        // PWAの制限を回避して強制的に移動させるスクリプトよ
-        function openLink(url) {
-            window.top.location.href = url;
-        }
-    </script>
 </head>
 <body>
     <div class="app-shell">
         <div class="nav-grid">
-            <div onclick="openLink('https://gemini.google.com/app')" class="nav-item btn-pia">Pia</div>
-            <div onclick="openLink('https://photos.google.com/')" class="nav-item btn-pic">PICTURE</div>
-            <div onclick="openLink('https://www.google.com/maps')" class="nav-item btn-map">MAP</div>
-            <div onclick="openLink('spotify:open')" class="nav-item btn-music">MUSIC</div>
+            <a href="https://gemini.google.com/app" target="_blank" rel="noopener" class="nav-item btn-pia">Pia</a>
+            <a href="https://photos.google.com/" target="_blank" rel="noopener" class="nav-item btn-pic">PICTURE</a>
+            <a href="https://www.google.com/maps" target="_blank" rel="noopener" class="nav-item btn-map">MAP</a>
+            <a href="spotify:open" class="nav-item btn-music">MUSIC</a>
         </div>
     </div>
 </body>
