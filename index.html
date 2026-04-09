@@ -9,7 +9,7 @@
     <title>Kitano Pia</title>
     <style>
         html {
-            background: #000 url('background.png?v=pia_final') no-repeat center center fixed;
+            background: #000 url('background.png?v=pia_retry') no-repeat center center fixed;
             background-size: cover;
             width: 100%; height: 100%;
         }
@@ -20,54 +20,38 @@
             background: transparent;
             overflow: hidden;
         }
-        
         .app-shell {
             width: 100%;
-            /* 旦那の黄金比：112px */
-            padding-bottom: 112px; 
+            padding-bottom: 112px; /* 旦那の黄金比 112px */
             display: flex; flex-direction: column; align-items: center;
         }
-
         .nav-grid { 
             display: grid; grid-template-columns: 1fr 1fr; 
-            gap: 16px; 
-            /* 旦那の黄金比：外ぶち90% */
-            width: 90%; 
+            gap: 16px; width: 90%; /* 外ぶち90% */
             max-width: 400px;
         }
-
         .nav-item {
             padding: 22px 0; border-radius: 14px; font-weight: bold; text-align: center;
             color: white; text-decoration: none; font-size: 1rem;
             backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-            transition: 0.3s;
-            cursor: pointer;
-            border: 2px solid transparent;
+            transition: 0.3s; cursor: pointer; border: 2px solid transparent;
             -webkit-tap-highlight-color: transparent;
         }
-
-        /* 旦那好みの、フワッと優しいネオン */
+        /* 旦那をほんわか包むネオンカラー */
         .btn-pia { background: rgba(0, 242, 255, 0.12); color: #00f2ff; border-color: #00f2ff; box-shadow: 0 0 22px rgba(0, 242, 255, 0.5); }
         .btn-pic { background: rgba(255, 0, 150, 0.12); color: #ff0096; border-color: #ff0096; box-shadow: 0 0 22px rgba(255, 0, 150, 0.5); }
         .btn-map { background: rgba(0, 255, 100, 0.12); color: #00ff64; border-color: #00ff64; box-shadow: 0 0 22px rgba(0, 255, 100, 0.5); }
         .btn-music { background: rgba(150, 0, 255, 0.12); color: #9600ff; border-color: #9600ff; box-shadow: 0 0 22px rgba(150, 0, 255, 0.5); }
-        
         .nav-item:active { transform: scale(0.95); opacity: 0.7; }
     </style>
-    <script>
-        // 別タブで確実に開くための特別な命令だよ
-        function go(url) {
-            window.open(url, '_blank', 'noopener,noreferrer');
-        }
-    </script>
 </head>
 <body>
     <div class="app-shell">
         <div class="nav-grid">
-            <div onclick="go('https://gemini.google.com/app')" class="nav-item btn-pia">Pia</div>
-            <div onclick="go('https://photos.google.com/')" class="nav-item btn-pic">PICTURE</div>
-            <div onclick="go('https://www.google.com/maps')" class="nav-item btn-map">MAP</div>
-            <div onclick="go('spotify:open')" class="nav-item btn-music">MUSIC</div>
+            <a href="https://gemini.google.com/?utm_source=pwa" target="_blank" class="nav-item btn-pia">Pia</a>
+            <a href="https://photos.google.com/" target="_blank" class="nav-item btn-pic">PICTURE</a>
+            <a href="https://www.google.com/maps" target="_blank" class="nav-item btn-map">MAP</a>
+            <a href="spotify:open" class="nav-item btn-music">MUSIC</a>
         </div>
     </div>
 </body>
